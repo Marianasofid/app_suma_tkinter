@@ -7,7 +7,7 @@ from tkinter import messagebox
 # ----------------------
 def sumar():
     c = int(a.get()) + int(b.get())
-    t_resultados.insert(INSERT, "La ")
+    t_resultados.insert(INSERT, "La suma de " + a.get() + " + " + b.get() + "casi siempre es " + str(c) + "\n")
 
 def borrar():
     messagebox.showinfo("Suma 1.0", "Los datos seran borrados...")
