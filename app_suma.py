@@ -1,9 +1,25 @@
 # Se importa la libreria tkinder con todas sus funciones 
 from tkinter import *
+from tkinter import messagebox
 
 # ----------------------
 # Funciones de la app
 # ----------------------
+def sumar():
+    c = int(a.get()) + int(b.get())
+    t_resultados.insert(INSERT, "La ")
+
+def borrar():
+    messagebox.showinfo("Suma 1.0", "Los datos seran borrados...")
+    a.set("")
+    b.set("")
+    t_resultados.delete("1.0", "end")
+
+
+
+def salir():
+    messagebox.showinfo("Suma 1.0", "La app se cerrara...")
+    ventana_principal.destroy()
 
 
 # ---------------------------
@@ -91,20 +107,20 @@ frame_2.place(x=10,y=260)
 
 # boton para sumar
 img_bt_sumar = PhotoImage(file="img/boton_sumar.png")
-bt_sumar = Button(frame_2, image = img_bt_sumar, width=105, height=105)
+bt_sumar = Button(frame_2, image = img_bt_sumar, width=105, height=105, command=sumar)
 # bt_sumar = Button(frame_2, text="Sumar", width=10)
 bt_sumar.place(x=116, y=7)
 
 
 # boton para borrar entrada y resultados
 img_bt_borrar = PhotoImage(file="img/boton_borrar.png")
-bt_borrar = Button(frame_2, image = img_bt_borrar, width=105, height=105)
+bt_borrar = Button(frame_2, image = img_bt_borrar, width=105, height=105, command=sumar)
 # bt_sumar = Button(frame_2, text="Sumar", width=10)
 bt_borrar.place(x=337, y=7)
 
 # boton para cerrar la aplicacion
 img_bt_salir = PhotoImage(file="img/boton_salir.png")
-bt_salir = Button(frame_2, image = img_bt_salir, width=105, height=105)
+bt_salir = Button(frame_2, image = img_bt_salir, width=105, height=105, command=salir)
 # bt_sumar = Button(frame_2, text="Sumar", width=10)
 bt_salir.place(x=558, y=7)
 
